@@ -1,0 +1,630 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#Docker
+简介Docker能用来干什么？
+更快的发布应用
+让部属和负载均衡更加轻松
+更加弹性，能够支持更多负载
+
+Docker主要有哪些组件
+Docker Engine:开源的容器平台
+Docker Hub:SaaS平台
+
+##准备步骤or环境搭建
+
+install docker
+run an image in a container
+build your own image
+
+Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker_brief">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/docker-brief/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#Docker
+简介Docker能用来干什么？
+更快的发布应用
+让部属和负载均衡更加轻松
+更加弹性，能够支持更多负载
+
+Docker主要有哪些组件
+Docker Engine:开源的容器平台
+Docker Hub:SaaS平台
+
+##准备步骤or环境搭建
+
+install docker
+run an image in a container
+build your own image
+
+Docker">
+<meta property="og:image" content="https://docs.docker.com/engine/article-img/architecture.svg">
+<meta property="og:updated_time" content="2016-05-12T10:06:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker_brief">
+<meta name="twitter:description" content="#Docker
+简介Docker能用来干什么？
+更快的发布应用
+让部属和负载均衡更加轻松
+更加弹性，能够支持更多负载
+
+Docker主要有哪些组件
+Docker Engine:开源的容器平台
+Docker Hub:SaaS平台
+
+##准备步骤or环境搭建
+
+install docker
+run an image in a container
+build your own image
+
+Docker">
+<meta name="twitter:image" content="https://docs.docker.com/engine/article-img/architecture.svg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> docker_brief | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                docker_brief
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T18:05:58+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Docker</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="Docker能用来干什么？"><a href="#Docker能用来干什么？" class="headerlink" title="Docker能用来干什么？"></a>Docker能用来干什么？</h3><ul>
+<li>更快的发布应用</li>
+<li>让部属和负载均衡更加轻松</li>
+<li>更加弹性，能够支持更多负载</li>
+</ul>
+<h3 id="Docker主要有哪些组件"><a href="#Docker主要有哪些组件" class="headerlink" title="Docker主要有哪些组件"></a>Docker主要有哪些组件</h3><ul>
+<li>Docker Engine:开源的容器平台</li>
+<li><a href="https://hub.docker.com/" target="_blank" rel="external">Docker Hub</a>:SaaS平台</li>
+</ul>
+<p>##准备步骤or环境搭建</p>
+<ul>
+<li><a href="https://docs.docker.com/mac/step_one/" target="_blank" rel="external">install docker</a></li>
+<li><a href="https://docs.docker.com/mac/step_two/" target="_blank" rel="external">run an image in a container</a></li>
+<li><a href="https://docs.docker.com/mac/step_four/" target="_blank" rel="external">build your own image</a></li>
+</ul>
+<h2 id="Docker架构"><a href="#Docker架构" class="headerlink" title="Docker架构"></a>Docker架构</h2><p>Docker使用的是客服端服务器的架构，Docker client与Docker daemon直接通信， Docker daemon负责build、run、distribute所有的Docker容器。client和daemon既可以运行在同一台机器上，也可以吧daemon部署在远程服务器，然后用client连接远程daemon进行工作，在远程工作模式下，client和daemon通过socket或者RESTful API进行通信。</p>
+<p><img src="https://docs.docker.com/engine/article-img/architecture.svg" alt="Docker architecture"></p>
+<h3 id="几个关键概念"><a href="#几个关键概念" class="headerlink" title="几个关键概念"></a>几个关键概念</h3><ul>
+<li>Docker images, images是一个只读的模版，可以包含一个部属了代码的ubuntu操作系统。images被用来创建container。</li>
+<li>Docker registries，registries管理着images，是Docker hub的一部分，里面包含了大量现成的images供使用。</li>
+<li>Docker container， container就像一个文件夹，里面包含了程序运行所需要的一切。</li>
+</ul>
+<h3 id="Docker-image的工作机制"><a href="#Docker-image的工作机制" class="headerlink" title="Docker image的工作机制"></a>Docker image的工作机制</h3><p>每个image包含很多层，Docker用<a href="http://en.wikipedia.org/wiki/UnionFS" target="_blank" rel="external">union file system</a>把这些层封装成单个image。</p>
+<p>这种层级结构使得Docker非常的轻量级，当你改变了一个image（比如升级代码到最新版本）之后，Docker就会build出一个新的层，但是不会像虚拟机的整个image替换那样，而只用发布更新的部分，这种机制使得发布Docker image非常的方便。</p>
+<p>每个image都是从base image衍生出来，例如 ubuntu、fedora</p>
+<p>Docker都是根据指令集从base image衍生出新的层，每个指令生成新的一层。</p>
+<ul>
+<li>Run a command</li>
+<li>Add a file or directory</li>
+<li>Create an environment variable</li>
+<li>What process to run when launching the container from this image</li>
+</ul>
+<p>这些指令都保存在一个叫做Dockerfile的文件中</p>
+<h3 id="Docker-registry的工作机制"><a href="#Docker-registry的工作机制" class="headerlink" title="Docker registry的工作机制"></a>Docker registry的工作机制</h3><p>Docker registry是用来存放docker images的地方。我们创建的docker image都可以push到Docker registry里。既可以是<a href="https://hub.docker.com/" target="_blank" rel="external">Docker Hub</a>这种公共的registry，也可以是内网的registry。</p>
+<h3 id="Docker-container的工作机制"><a href="#Docker-container的工作机制" class="headerlink" title="Docker container的工作机制"></a>Docker container的工作机制</h3><p>一个container包含了操作系统、用户自己添加的文件、meta-data。Docker image是只读的，当Docker在image上运行了一个container的时候，docker在image之上增加了一个读写层，我们的应用程序就运行在这个读写层里。</p>
+<h3 id="当我们运行一个container的时候发生了什么"><a href="#当我们运行一个container的时候发生了什么" class="headerlink" title="当我们运行一个container的时候发生了什么"></a>当我们运行一个container的时候发生了什么</h3><p>我们通过以下命令来跟docker daemon交互，告诉daemon来执行命令</p>
+<pre><code>$ docker run -i -t ubuntu /bin/bash
+</code></pre><ul>
+<li>Pulls the ubuntu image</li>
+<li>creates a new container</li>
+<li>Allocates a filesystem and mounts a read-write layer</li>
+<li>Allocates a network/bridge interface</li>
+<li>Sets up an IP address</li>
+<li>Executes a process that you specify</li>
+<li>Captures and provides application output</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/12/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Aaron 陶金秋" />
+          <p class="site-author-name" itemprop="name">Aaron 陶金秋</p>
+          <p class="site-description motion-element" itemprop="description">关注搜索、NOSQL、NEWSQL、大数据</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker能用来干什么？"><span class="nav-number">1.1.</span> <span class="nav-text">Docker能用来干什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker主要有哪些组件"><span class="nav-number">1.2.</span> <span class="nav-text">Docker主要有哪些组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker架构"><span class="nav-number">2.</span> <span class="nav-text">Docker架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几个关键概念"><span class="nav-number">2.1.</span> <span class="nav-text">几个关键概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-image的工作机制"><span class="nav-number">2.2.</span> <span class="nav-text">Docker image的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-registry的工作机制"><span class="nav-number">2.3.</span> <span class="nav-text">Docker registry的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-container的工作机制"><span class="nav-number">2.4.</span> <span class="nav-text">Docker container的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当我们运行一个container的时候发生了什么"><span class="nav-number">2.5.</span> <span class="nav-text">当我们运行一个container的时候发生了什么</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aaron 陶金秋</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
