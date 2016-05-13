@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Docker," />
 
 
 
@@ -84,15 +84,60 @@
 
 
 
-<meta name="description" content="关注搜索、NOSQL、NEWSQL、大数据">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我爱小仙女">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="简介Docker能用来干什么？
+更快的发布应用
+让部属和负载均衡更加轻松
+更加弹性，能够支持更多负载
+
+Docker主要有哪些组件
+Docker Engine:开源的容器平台
+Docker Hub:SaaS平台
+
+准备步骤or环境搭建
+install docker
+run an image in a container
+build your own image
+
+Docker架构Docker使用的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker初探系列（一）">
+<meta property="og:url" content="http://yoursite.com/2016/05/13/Docker初探系列（一）/index.html">
 <meta property="og:site_name" content="我爱小仙女">
-<meta property="og:description" content="关注搜索、NOSQL、NEWSQL、大数据">
+<meta property="og:description" content="简介Docker能用来干什么？
+更快的发布应用
+让部属和负载均衡更加轻松
+更加弹性，能够支持更多负载
+
+Docker主要有哪些组件
+Docker Engine:开源的容器平台
+Docker Hub:SaaS平台
+
+准备步骤or环境搭建
+install docker
+run an image in a container
+build your own image
+
+Docker架构Docker使用的">
+<meta property="og:image" content="http://yoursite.com/images/docker_architecture.svg">
+<meta property="og:updated_time" content="2016-05-13T03:31:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我爱小仙女">
-<meta name="twitter:description" content="关注搜索、NOSQL、NEWSQL、大数据">
+<meta name="twitter:title" content="Docker初探系列（一）">
+<meta name="twitter:description" content="简介Docker能用来干什么？
+更快的发布应用
+让部属和负载均衡更加轻松
+更加弹性，能够支持更多负载
+
+Docker主要有哪些组件
+Docker Engine:开源的容器平台
+Docker Hub:SaaS平台
+
+准备步骤or环境搭建
+install docker
+run an image in a container
+build your own image
+
+Docker架构Docker使用的">
+<meta name="twitter:image" content="http://yoursite.com/images/docker_architecture.svg">
 
 
 
@@ -110,7 +155,7 @@
   };
 </script>
 
-  <title> 我爱小仙女 </title>
+  <title> Docker初探系列（一） | 我爱小仙女 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,9 +176,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -242,10 +285,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/13/Docker初探系列（一）/" itemprop="url">
-                  Docker初探系列（一）
-                </a>
+                Docker初探系列（一）
               
             
           </h1>
@@ -304,9 +344,7 @@
       
 
       
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="Docker能用来干什么？"><a href="#Docker能用来干什么？" class="headerlink" title="Docker能用来干什么？"></a>Docker能用来干什么？</h3><ul>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="Docker能用来干什么？"><a href="#Docker能用来干什么？" class="headerlink" title="Docker能用来干什么？"></a>Docker能用来干什么？</h3><ul>
 <li>更快的发布应用</li>
 <li>让部属和负载均衡更加轻松</li>
 <li>更加弹性，能够支持更多负载</li>
@@ -352,36 +390,44 @@
 <li>Captures and provides application output</li>
 </ul>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag">#Docker</a>
+          
+        </div>
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -389,6 +435,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -408,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -459,6 +518,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker能用来干什么？"><span class="nav-number">1.1.</span> <span class="nav-text">Docker能用来干什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker主要有哪些组件"><span class="nav-number">1.2.</span> <span class="nav-text">Docker主要有哪些组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备步骤or环境搭建"><span class="nav-number">2.</span> <span class="nav-text">准备步骤or环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker架构"><span class="nav-number">3.</span> <span class="nav-text">Docker架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几个关键概念"><span class="nav-number">3.1.</span> <span class="nav-text">几个关键概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-image的工作机制"><span class="nav-number">3.2.</span> <span class="nav-text">Docker image的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-registry的工作机制"><span class="nav-number">3.3.</span> <span class="nav-text">Docker registry的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-container的工作机制"><span class="nav-number">3.4.</span> <span class="nav-text">Docker container的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当我们运行一个container的时候发生了什么"><span class="nav-number">3.5.</span> <span class="nav-text">当我们运行一个container的时候发生了什么</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -555,6 +625,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
